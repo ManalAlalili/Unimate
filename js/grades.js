@@ -1,8 +1,13 @@
-
 // UniMate Grade Tracker
 
-var courses = [];
-var grades = [];
+var courses = JSON.parse(localStorage.getItem("unimateCourses")) || [];
+var grades = JSON.parse(localStorage.getItem("unimateGrades")) || [];
+
+// Save courses and grades
+function saveGrades() {
+    localStorage.setItem("unimateCourses", JSON.stringify(courses));
+    localStorage.setItem("unimateGrades", JSON.stringify(grades));
+}
 
 // Add course when the form is submitted
 document.getElementById("gradeForm").addEventListener("submit", addCourse);
@@ -24,6 +29,8 @@ function addCourse(event) {
     // Store course name and grade
     courses.push(courseName);
     grades.push(courseGrade);
+
+    saveGrades();
 
     message.textContent = "Course added successfully!";
 
@@ -119,6 +126,8 @@ function deleteCourse(index) {
         courses.splice(index, 1);
         grades.splice(index, 1);
 
+        saveGrades();
+
         document.getElementById("message").textContent =
             "Course deleted successfully!";
 
@@ -126,3 +135,7 @@ function deleteCourse(index) {
         calculateGrades();
     }
 }
+
+// Display saved courses when the page opens
+displayCourses();
+calculateGrades();
