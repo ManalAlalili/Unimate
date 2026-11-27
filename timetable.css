@@ -1,0 +1,169 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f3ff;
+    color: #333;
+}
+
+.header {
+    background-color: #6c63a8;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 30px auto;
+}
+
+.form-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #514a87;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: #6c63a8;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #514a87;
+}
+
+.cancel-btn {
+    background-color: #777;
+}
+
+#message {
+    grid-column: 1 / -1;
+    font-weight: bold;
+}
+
+.schedule-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.timetable {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.day-column {
+    background-color: #f5f3ff;
+    padding: 12px;
+    border-radius: 10px;
+    min-height: 220px;
+}
+
+.day-column h3 {
+    text-align: center;
+    color: #514a87;
+    padding: 12px 5px;
+    border-bottom: 2px solid #d8d2f2;
+    margin-bottom: 12px;
+}
+
+.class-card {
+    background-color: white;
+    border-left: 4px solid #8b80d6;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+.class-card h4 {
+    color: #514a87;
+    margin-bottom: 8px;
+}
+
+.class-card p {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.edit-btn {
+    background-color: #4299a8;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.delete-btn {
+    background-color: #dc6262;
+    margin-top: 8px;
+}
+
+.empty {
+    color: #999;
+    text-align: center;
+    font-size: 13px;
+    padding: 15px 0;
+}
+
+@media (max-width: 900px) {
+    .timetable {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .timetable {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
