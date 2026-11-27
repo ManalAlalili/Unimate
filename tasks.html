@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unimate | Task Manager</title>
+    <link rel="stylesheet" href="tasks.css">
+</head>
+<body>
+
+<main class="task-dashboard">
+
+    <section class="task-banner">
+        <span>UNIMATE | YOUR ACADEMIC PLANNER</span>
+        <h1>Make Today Count.</h1>
+        <p>Organize your tasks, manage your deadlines and achieve your academic goals.</p>
+        <div id="taskToday"></div>
+    </section>
+
+    <section class="task-summary">
+
+        <div class="task-stat">
+            <span>📋</span>
+            <h3>Total Tasks</h3>
+            <p id="taskTotal">0</p>
+        </div>
+
+        <div class="task-stat">
+            <span>⏳</span>
+            <h3>Pending</h3>
+            <p id="taskPending">0</p>
+        </div>
+
+        <div class="task-stat">
+            <span>✅</span>
+            <h3>Completed</h3>
+            <p id="taskCompleted">0</p>
+        </div>
+
+        <div class="task-stat">
+            <span>📅</span>
+            <h3>Overdue</h3>
+            <p id="taskOverdue">0</p>
+        </div>
+
+    </section>
+
+    <section class="task-progress">
+
+        <div class="task-progress-circle" id="taskProgressCircle">
+            <span id="taskPercentage">0%</span>
+        </div>
+
+        <div>
+            <h2>Your Productivity</h2>
+            <p id="taskProgressText">
+                Complete your first task to get started!
+            </p>
+        </div>
+
+    </section>
+
+    <div class="task-workspace">
+
+        <section class="task-panel">
+
+            <h2 id="taskFormTitle">Create a New Task</h2>
+            <p>One small step closer to your goals.</p>
+
+            <form id="taskForm">
+
+                <label for="taskName">Task Name</label>
+                <input type="text" id="taskName"
+                       placeholder="e.g. Website Project"
+                       maxlength="100" required>
+
+                <label for="taskCourse">Course Name</label>
+                <input type="text" id="taskCourse"
+                       placeholder="e.g. Web Programming"
+                       maxlength="100" required>
+
+                <div class="task-form-row">
+
+                    <div>
+                        <label for="taskDeadline">Deadline</label>
+                        <input type="date" id="taskDeadline" required>
+                    </div>
+
+                    <div>
+                        <label for="taskPriority">Priority</label>
+                        <select id="taskPriority" required>
+                            <option value="">Select Priority</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <label for="taskNotes">Notes (Optional)</label>
+                <textarea id="taskNotes"
+                          placeholder="Add any important details..."
+                          maxlength="500" rows="4"></textarea>
+
+                <button type="submit" id="taskSubmit">
+                    + Add Task
+                </button>
+
+                <button type="button" id="taskCancel" hidden>
+                    Cancel Editing
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="task-panel">
+
+            <h2>My Tasks</h2>
+            <p>Stay focused and take control of your deadlines.</p>
+
+            <div class="task-controls">
+
+                <input type="search" id="taskSearch"
+                       placeholder="Search your tasks..."
+                       aria-label="Search tasks">
+
+                <select id="taskFilter" aria-label="Filter tasks">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+
+                <select id="taskSort" aria-label="Sort tasks">
+                    <option value="deadline">Sort by Deadline</option>
+                    <option value="priority">Sort by Priority</option>
+                    <option value="newest">Recently Added</option>
+                </select>
+
+            </div>
+
+            <section id="taskPendingSection">
+                <h3>Pending Tasks</h3>
+                <div id="pendingTaskList"></div>
+            </section>
+
+            <section id="taskCompletedSection">
+                <h3>Completed Tasks</h3>
+                <div id="completedTaskList"></div>
+            </section>
+
+        </section>
+
+    </div>
+
+    <div id="taskMessage" role="status"></div>
+
+    <footer class="task-footer">
+        <p>Small progress is still progress. Keep going!</p>
+        <span>Unimate — Your Academic Companion</span>
+    </footer>
+
+</main>
+
+<script src="tasks.js"></script>
+
+</body>
+</html>
