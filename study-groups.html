@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Groups | UniMate</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Study Groups CSS -->
+    <link rel="stylesheet" href="css/study-groups.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                Uni<span>Mate</span>
+            </a>
+
+            <div class="nav-links">
+
+                <a href="index.html">Dashboard</a>
+
+                <a href="timetable.html">Timetable</a>
+
+                <a href="tasks.html">Tasks</a>
+
+                <a href="study-groups.html" class="active">
+                    Study Groups
+                </a>
+
+                <a href="grades.html">Grades</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+
+        <!-- Page Header -->
+        <section class="page-header">
+
+            <div>
+
+                <p class="subtitle">LEARN TOGETHER</p>
+
+                <h1>Study Groups</h1>
+
+                <p class="description">
+                    Connect with students, share knowledge,
+                    and achieve your academic goals together.
+                </p>
+
+            </div>
+
+            <div class="header-icon">📚</div>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">👥</div>
+
+                <div>
+                    <h2 id="totalGroups">0</h2>
+                    <p>Available Groups</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">✓</div>
+
+                <div>
+                    <h2 id="joinedGroups">0</h2>
+                    <p>My Groups</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">📖</div>
+
+                <div>
+                    <h2 id="totalResources">0</h2>
+                    <p>Study Resources</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Explore Study Groups -->
+        <section class="groups-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Explore Study Groups</h2>
+
+                    <p>
+                        Find a group that matches your courses.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Search and Filter -->
+            <div class="filters">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search groups or subjects..."
+                    >
+
+                </div>
+
+
+                <select id="categoryFilter">
+
+                    <option value="All">All Subjects</option>
+
+                    <option value="Programming">Programming</option>
+
+                    <option value="Database">Database</option>
+
+                    <option value="Networking">Networking</option>
+
+                    <option value="Multimedia">Multimedia</option>
+
+                    <option value="Design">Design</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Groups Cards -->
+            <div
+                class="groups-grid"
+                id="groupsContainer">
+            </div>
+
+
+            <p
+                class="empty-message"
+                id="emptyMessage">
+
+                No study groups found.
+
+            </p>
+
+        </section>
+
+
+        <!-- My Study Groups -->
+        <section class="my-groups-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>My Study Groups</h2>
+
+                    <p>
+                        Groups you have joined.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="myGroupsContainer"
+                class="my-groups-list">
+            </div>
+
+        </section>
+
+
+        <!-- Study Resources -->
+        <section class="resources-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>Study Resources</h2>
+
+                    <p>
+                        Useful materials to support your learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="resources-grid"
+                id="resourcesContainer">
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Group Details Modal -->
+    <div
+        class="modal-overlay"
+        id="groupModal">
+
+        <div class="modal">
+
+            <button
+                class="close-modal"
+                id="closeModal">
+
+                &times;
+
+            </button>
+
+
+            <div id="modalContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 UniMate. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Study Groups JavaScript -->
+    <script src="js/study-groups.js"></script>
+
+</body>
+
+</html>
